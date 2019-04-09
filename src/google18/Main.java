@@ -7,7 +7,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int[] array = {10, 5, 2, 7, 8, 7};
-		int num = 4;
+		int num = 3;
 		
 		compute(array , num);
 
@@ -19,10 +19,12 @@ public class Main {
 		
 		while(count < array.length-num+1 ) {
 			
-			int[] subArray = new int[num];
+//			int[] subArray = new int[num];
+//			
+//			for(int x = 0; x < num; x++) 
+//				subArray[x] = array[x+count];
 			
-			for(int x = 0; x < num; x++) 
-				subArray[x] = array[x+count];
+			int[] subArray = Arrays.copyOfRange(array, count, num+count);
 			
 			Arrays.sort(subArray);
 			System.out.println(subArray[subArray.length-1]);
